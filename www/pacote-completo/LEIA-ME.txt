@@ -1,0 +1,83 @@
+╔══════════════════════════════════════════════════════════════════╗
+║       ⚖️  EXTRATOR JURÍDICO v2.0 — Pacote Completo             ║
+║                                                                  ║
+║  Advogado Maikon Caldeira — OAB/MG 183712                       ║
+║  SEM SERVIDOR · SEM REPLIT · STANDALONE · VIRA APK              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+USAR NO NAVEGADOR (sem instalar nada)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Windows  →  clique duas vezes em  iniciar.bat
+  Mac/Linux →  execute  ./iniciar.sh  no terminal
+  Qualquer  →  arraste  index.html  para o Chrome
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TRANSFORMAR EM APK (sem instalar Android Studio)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Crie conta GRÁTIS em  github.com
+  2. Crie repositório público em  github.com/new
+  3. Instale o Git em  git-scm.com
+  4. Abra o terminal nesta pasta e execute:
+
+       git init
+       git add .
+       git commit -m "Extrator Juridico"
+       git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+       git push -u origin main
+
+  5. Aguarde ~10 min → clique em Releases → baixe o .apk
+  6. Transfira para o celular e instale
+
+  Detalhe completo: veja MANUAL-COMPLETO.html (seção 6)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONFIGURAR IA (grátis)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Groq (recomendado, grátis):
+    1. console.groq.com → crie conta → API Keys → Create
+    2. No app: botão 🤖 → 🔑 → cole a chave (gsk_...) → Salvar
+
+  Gemini (grátis):
+    1. aistudio.google.com → Get API Key → Create
+    2. No app: botão 🤖 → 🔑 → cole a chave (AIza...) → Salvar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTEÚDO DO PACOTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  index.html              ← O app completo (1 arquivo, ~47KB)
+  MANUAL-COMPLETO.html    ← Manual detalhado com índice completo
+  LEIA-ME.txt             ← Este arquivo
+  iniciar.bat             ← Abre no Chrome (Windows)
+  iniciar.sh              ← Abre no Chrome (Mac/Linux)
+  COMPILAR-APK.md         ← Guia rápido de compilação
+  android/                ← Projeto Android Studio (Capacitor 6.1.2)
+  dist/index.html         ← Cópia do app (webDir do Capacitor)
+  capacitor.config.js     ← Configuração do Capacitor
+  package.json            ← Dependências npm
+  .github/workflows/      ← GitHub Actions (compila APK automático)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ROTAS DE API USADAS (NENHUMA do Replit)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Proxies para extração de sites (públicos, gratuitos):
+    https://api.allorigins.win/get?url=...
+    https://corsproxy.io/?...
+    https://api.codetabs.com/v1/proxy?quest=...
+
+  IA (direto ao provedor, sem intermediário):
+    Groq    → api.groq.com/openai/v1/chat/completions
+    Gemini  → generativelanguage.googleapis.com/v1beta/...
+    OpenAI  → api.openai.com/v1/chat/completions
+    Outros  → veja MANUAL-COMPLETO.html seção 4
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Package ID Android: br.adv.maikoncaldeira.extrator
+Min Android: 5.1+ (API 22)  |  Target: Android 14 (API 34)
+Capacitor: 6.1.2  |  Gradle: 8.6  |  Java: 17
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

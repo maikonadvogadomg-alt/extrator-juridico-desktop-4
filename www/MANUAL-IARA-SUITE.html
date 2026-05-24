@@ -1,0 +1,179 @@
+s)/APK(s) → Build APK(s)</em></div></div>
+<div class="step"><div class="step-num">10</div><div class="step-body">APK gerado em: <code>android/app/build/outputs/apk/debug/app-debug.apk</code></div></div>
+
+<h3 id="apk-actions">Opção B — GitHub Actions (sem instalar nada)</h3>
+<p>Esta é a opção mais fácil. O APK é compilado automaticamente no GitHub quando você faz push.</p>
+<div class="step"><div class="step-num">1</div><div class="step-body">Siga os passos 1 a 5 da Opção A para gerar o ZIP</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-body">Extraia o ZIP e inicialize o repositório Git:</div></div>
+<pre><code>git init
+git add .
+git commit -m "Initial commit"</code></pre>
+<div class="step"><div class="step-num">3</div><div class="step-body">Crie um repositório no <a href="https://github.com" target="_blank">GitHub.com</a> (pode ser público, gratuito)</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-body">Faça o push:</div></div>
+<pre><code>git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+git branch -M main
+git push -u origin main</code></pre>
+<div class="step"><div class="step-num">5</div><div class="step-body">O GitHub Actions inicia automaticamente. Aguarde ~10-15 minutos</div></div>
+<div class="step"><div class="step-num">6</div><div class="step-body">Acesse a aba <strong>Releases</strong> do repositório → clique no arquivo <code>.apk</code> para baixar</div></div>
+
+<div class="alert a-tip">
+  <strong>💡 Dica:</strong> Toda vez que fizer push (com atualizações), o APK é recompilado automaticamente. O workflow já está configurado no arquivo <code>.github/workflows/build-apk.yml</code>.
+</div>
+
+<h3>Instalar o APK no celular</h3>
+<ol>
+  <li>Transfira o <code>.apk</code> para o celular (cabo USB, WhatsApp, Google Drive)</li>
+  <li>No celular: <em>Configurações → Segurança → Fontes desconhecidas</em> (ou similar)</li>
+  <li>Abra o arquivo <code>.apk</code> e toque em <em>Instalar</em></li>
+</ol>
+
+<h3 id="apk-electron">Opção C — Electron (Executável de PC)</h3>
+<div class="step"><div class="step-num">1</div><div class="step-body">Selecione <strong>🖥 Electron (PC: Win/Mac/Linux)</strong></div></div>
+<div class="step"><div class="step-num">2</div><div class="step-body">Gere e extraia o ZIP</div></div>
+<div class="step"><div class="step-num">3</div><div class="step-body">Instale Node.js e execute:</div></div>
+<pre><code>npm install
+npm start          # Abre o app
+npm run dist       # Gera .exe (Windows), .dmg (Mac), .AppImage (Linux)</code></pre>
+<div class="step"><div class="step-num">4</div><div class="step-body">O executável é gerado na pasta <code>dist-electron/</code></div></div>
+
+<h3 id="apk-orient">Orientação de Tela</h3>
+<table>
+  <thead><tr><th>Opção</th><th>AndroidManifest.xml</th><th>Uso recomendado</th></tr></thead>
+  <tbody>
+    <tr><td>Retrato (portrait)</td><td><code>portrait</code></td><td>Apps de leitura, formulários</td></tr>
+    <tr><td>Paisagem (landscape)</td><td><code>landscape</code></td><td>Players, editores</td></tr>
+    <tr><td>Ambas</td><td><code>unspecified</code></td><td>Iara Suite, apps gerais</td></tr>
+  </tbody>
+</table>
+
+<h3 id="apk-erro">Solução de Erros Comuns</h3>
+<table>
+  <thead><tr><th>Erro</th><th>Causa</th><th>Solução</th></tr></thead>
+  <tbody>
+    <tr><td><code>Gradle sync failed</code></td><td>SDK não instalado</td><td>Android Studio → SDK Manager → instale Android 34</td></tr>
+    <tr><td><code>JAVA_HOME not set</code></td><td>Java não configurado</td><td>Instale JDK 17 e configure JAVA_HOME</td></tr>
+    <tr><td><code>capacitor not found</code></td><td>npm install pulado</td><td>Execute <code>npm install</code> antes de <code>npx cap copy</code></td></tr>
+    <tr><td>APK instala mas tela branca</td><td>index.html na pasta errada</td><td>Certifique que o index.html está na raiz do ZIP enviado</td></tr>
+    <tr><td>GitHub Actions falhou</td><td>Veja o log em Actions</td><td>Clique no workflow falhado → expanda o passo com erro</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider"/>
+
+<!-- 7. EXTRATOR -->
+<h2 id="extrator">7. Site Extractor</h2>
+<p>O Site Extractor acessa páginas web via proxies públicos gratuitos para contornar restrições de CORS, permitindo analisar scripts de cálculo de sites jurídicos.</p>
+
+<h3 id="ext-proxy">Proxies Públicos Utilizados</h3>
+<ol>
+  <li><strong>allorigins.win</strong> — proxy primário, retorna JSON com HTML</li>
+  <li><strong>corsproxy.io</strong> — fallback automático se o primeiro falhar</li>
+  <li><strong>codetabs.com/v1/proxy</strong> — terceiro fallback</li>
+</ol>
+
+<div class="alert a-warn">
+  Sites com Cloudflare Enterprise ou WAF avançado podem bloquear proxies. Nesse caso, experimente acessar o site e inspecionar manualmente o HTML via F12 → Fontes.
+</div>
+
+<h3 id="ext-scripts">Scripts de Cálculo Detectados</h3>
+<p>O extrator identifica automaticamente scripts com:</p>
+<ul>
+  <li><span class="badge b-yellow">⚖️ Cálculo</span> — palavras como: salário, benefício, INSS, previdenciário, aposentadoria, pensão, correção monetária, coeficiente, RMC</li>
+  <li><span class="badge b-purple">📐 Fórmula</span> — Math., parseFloat, toFixed, function calc, operações matemáticas</li>
+  <li><span class="badge b-green">🌐 AJAX/Fetch</span> — fetch(), XMLHttpRequest, $.ajax(), axios</li>
+</ul>
+
+<h3>Funcionalidades</h3>
+<ul>
+  <li><strong>⬇ .js</strong> — baixa todos os scripts inline em um arquivo JavaScript</li>
+  <li><strong>⬇ HTML</strong> — baixa o HTML completo da página</li>
+  <li><strong>👁 Ver</strong> — abre o código do script em modal com opção de copiar</li>
+  <li><strong>🔗</strong> — abre o arquivo externo em nova aba</li>
+  <li>Profundidade 2 — extrai também subpáginas (até 5 links)</li>
+</ul>
+
+<hr class="divider"/>
+
+<!-- 8. ATALHOS -->
+<h2 id="atalhos">8. Atalhos de Teclado</h2>
+<table>
+  <thead><tr><th>Atalho</th><th>Ação</th><th>Onde</th></tr></thead>
+  <tbody>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>S</kbd></td><td>Salvar arquivo atual</td><td>Editor</td></tr>
+    <tr><td><kbd>Tab</kbd></td><td>Inserir 2 espaços</td><td>Editor</td></tr>
+    <tr><td><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td><td>Enviar mensagem para IA</td><td>Chat IA</td></tr>
+    <tr><td><kbd>Enter</kbd></td><td>Criar arquivo (no campo do nome)</td><td>Sidebar</td></tr>
+    <tr><td><kbd>Esc</kbd></td><td>Fechar modal</td><td>Modais</td></tr>
+  </tbody>
+</table>
+
+<hr class="divider"/>
+
+<!-- 9. FAQ -->
+<h2 id="faq">9. FAQ — Perguntas Frequentes</h2>
+
+<h3>O app usa o servidor do Replit de alguma forma?</h3>
+<p><strong>Não.</strong> Nenhuma chamada vai ao Replit. A IA chama diretamente o servidor da provedora (OpenAI, Groq, etc). O terminal usa WebVM (WebAssembly local). O extrator usa proxies públicos independentes.</p>
+
+<h3>Minha chave de API fica segura?</h3>
+<p>A chave é salva apenas no <code>localStorage</code> do seu navegador (no seu dispositivo). Ela nunca é enviada a nenhum servidor intermediário — vai direto da sua máquina para o servidor do provedor (OpenAI, Groq, etc).</p>
+
+<h3>O APK Builder gera o APK automaticamente?</h3>
+<p>O APK Builder gera o <em>projeto de código-fonte</em> em ZIP. Para gerar o arquivo <code>.apk</code> instalável, use o Android Studio (local) ou o GitHub Actions (automático na nuvem). O processo via GitHub Actions é mais simples — sem instalar nada.</p>
+
+<h3>Posso converter o Iara Suite em APK?</h3>
+<p>Sim! Na aba APK Builder, clique <strong>Demo (Iara Suite)</strong>. Isso carrega o próprio app com configuração <code>br.adv.maikoncaldeira.iarasuite</code> e orientação "Ambas". Gere o ZIP e compile normalmente.</p>
+
+<h3>O Terminal Linux funciona offline?</h3>
+<p>O WebVM roda Alpine Linux via WebAssembly. Ele precisa de conexão inicial para carregar (~10 MB), mas depois funciona parcialmente offline. Para acesso à internet dentro do VM, configure o Tailscale (opcional).</p>
+
+<h3>O Site Extractor não conseguiu acessar um site. O que fazer?</h3>
+<p>Sites com proteção Cloudflare podem bloquear proxies. Opções: (1) tente a URL sem <code>www</code>; (2) use a profundidade 1; (3) acesse o site manualmente no navegador e salve a página (<em>Ctrl+S</em>), depois extraia o HTML salvo.</p>
+
+<h3>Posso usar múltiplas IAs simultaneamente?</h3>
+<p>Configure os 4 slots com chaves diferentes. Apenas um slot pode estar ativo por vez. Para trocar, abra 🔑 Chaves API, ative outro slot e salve.</p>
+
+<hr class="divider"/>
+
+<!-- 10. CÁLCULOS -->
+<h2 id="juridico">10. Cálculos Jurídicos Integrados</h2>
+<p>O assistente Jasmim conhece os principais cálculos do direito previdenciário. Exemplos de perguntas:</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4>Previdenciário</h4>
+    <ul>
+      <li>"Calcule o fator previdenciário para 35 anos de contribuição, 60 anos de idade"</li>
+      <li>"Gere tabela de contribuição INSS 2024"</li>
+      <li>"Calcule a RMC (Renda Mensal de Contribuição)"</li>
+      <li>"Aposentadoria programada — regra de transição EC 103/2019"</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>Cível / Trabalhista</h4>
+    <ul>
+      <li>"Calcule atualização monetária com IPCA de jan/2020 a dez/2024"</li>
+      <li>"Juros de mora 1% ao mês sobre R$ 50.000 por 24 meses"</li>
+      <li>"Gere calculadora de FGTS com 8% sobre salário"</li>
+      <li>"Calcule décimo terceiro proporcional"</li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert a-tip">
+  <strong>💡 Prompt sugerido:</strong> "Sou o Dr. Maikon Caldeira, OAB/MG 183712. Preciso de uma calculadora HTML/CSS/JS completa para [descreva o cálculo]. Inclua validação de entrada, resultado formatado em R$ e explicação da fórmula utilizada."
+</div>
+
+<hr class="divider"/>
+
+<div style="text-align:center;padding:24px;color:var(--muted);font-size:12px">
+  <strong style="color:var(--primary)">⚡ Iara Suite v2.0</strong><br>
+  Desenvolvido para uso jurídico profissional<br>
+  Advogado Maikon Caldeira — OAB/MG 183712<br>
+  <br>
+  Sem dependências do servidor Replit · IA com rotas diretas · Terminal Linux gratuito
+</div>
+
+</div>
+</body>
+</html>

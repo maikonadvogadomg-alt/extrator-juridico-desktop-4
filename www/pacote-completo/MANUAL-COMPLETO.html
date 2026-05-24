@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Manual Completo — Extrator Jurídico + APK — Maikon Caldeira OAB/MG 183712</title>
+<style>
+:root{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--bg4:#30363d;
+  --border:#30363d;--text:#e6edf3;--muted:#8b949e;
+  --primary:#58a6ff;--green:#3fb950;--yellow:#d29922;
+  --red:#f85149;--purple:#bc8cff;--orange:#f0883e;
+  --cyan:#39d353;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;line-height:1.75}
+.page{max-width:960px;margin:0 auto;padding:32px 20px 60px}
+h1{font-size:32px;font-weight:800;margin-bottom:8px}
+h2{font-size:20px;font-weight:700;color:var(--primary);margin:44px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--border)}
+h3{font-size:16px;font-weight:700;color:var(--text);margin:28px 0 10px}
+h4{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin:18px 0 8px}
+p{margin-bottom:12px;color:#c9d1d9}
+ul,ol{padding-left:24px;margin-bottom:14px}
+li{margin-bottom:5px;color:#c9d1d9}
+code{background:var(--bg3);color:#79c0ff;padding:2px 7px;border-radius:4px;font-family:'Cascadia Code','Fira Code','Courier New',monospace;font-size:12px;white-space:nowrap}
+pre{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px 18px;overflow-x:auto;margin:14px 0;position:relative}
+pre code{background:none;padding:0;color:#79c0ff;font-size:12px;line-height:1.65;white-space:pre;word-break:normal}
+.copy-btn{position:absolute;top:8px;right:10px;background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:3px 8px;border-radius:4px;font-size:10px;cursor:pointer;font-family:inherit;transition:.15s}
+.copy-btn:hover{color:var(--text)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+th{background:var(--bg3);color:var(--muted);font-weight:700;text-align:left;padding:9px 13px;border:1px solid var(--border)}
+td{padding:9px 13px;border:1px solid var(--border);vertical-align:top;color:#c9d1d9}
+tr:nth-child(even) td{background:rgba(255,255,255,.018)}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px;margin:14px 0}
+.badge{display:inline-flex;align-items:center;padding:2px 9px;border-radius:10px;font-size:11px;font-weight:700;gap:3px}
+.b-blue{background:rgba(88,166,255,.15);color:var(--primary)}
+.b-green{background:rgba(63,185,80,.15);color:var(--green)}
+.b-yellow{background:rgba(210,153,34,.15);color:var(--yellow)}
+.b-purple{background:rgba(188,140,255,.15);color:var(--purple)}
+.b-red{background:rgba(248,81,73,.15);color:var(--red)}
+.b-muted{background:var(--bg3);color:var(--muted)}
+.b-orange{background:rgba(240,136,62,.15);color:var(--orange)}
+.alert{padding:12px 16px;border-radius:8px;margin:12px 0;font-size:13px;line-height:1.5}
+.a-ok{background:rgba(63,185,80,.08);border:1px solid rgba(63,185,80,.3);color:var(--green)}
+.a-info{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.3);color:#79c0ff}
+.a-warn{background:rgba(210,153,34,.08);border:1px solid rgba(210,153,34,.3);color:var(--yellow)}
+.a-danger{background:rgba(248,81,73,.08);border:1px solid rgba(248,81,73,.3);color:var(--red)}
+.a-tip{background:rgba(188,140,255,.08);border:1px solid rgba(188,140,255,.3);color:var(--purple)}
+.cover{background:linear-gradient(135deg,#0d1117,#161b22,#1a1f2e);border:1px solid var(--border);border-radius:14px;padding:40px;text-align:center;margin-bottom:32px}
+.cover-icon{font-size:56px;margin-bottom:16px}
+.cover h1{font-size:38px;background:linear-gradient(90deg,var(--primary),var(--purple),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.cover-sub{font-size:16px;color:var(--muted);margin-bottom:20px}
+.cover-author{display:inline-block;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:10px 20px;font-size:13px;color:var(--text);margin-bottom:16px}
+.cover-badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.toc{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:22px;margin:24px 0}
+.toc-title{font-size:16px;font-weight:700;color:var(--primary);margin-bottom:16px}
+.toc-item{margin-bottom:4px}
+.toc-item a{color:var(--muted);text-decoration:none;font-size:13px;transition:.15s}
+.toc-item a:hover{color:var(--primary)}
+.toc-sub{padding-left:20px}
+.toc-sub a{font-size:12px;color:var(--bg4)}
+.toc-sub a:hover{color:var(--primary)}
+.step-list{counter-reset:step;list-style:none;padding:0}
+.step-list li{counter-increment:step;display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.step-list li::before{content:counter(step);min-width:28px;height:28px;border-radius:50%;background:var(--primary);color:#000;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-body{flex:1}
+.tree{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 20px;font-family:'Cascadia Code','Fira Code','Courier New',monospace;font-size:12px;line-height:2;overflow-x:auto;margin:14px 0}
+.tree .d{color:var(--primary);font-weight:700}
+.tree .f{color:#c9d1d9}
+.tree .c{color:var(--muted)}
+.tree .h{color:var(--green)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:14px 0}
+@media(max-width:680px){.grid2,.grid3{grid-template-columns:1fr}}
+hr{border:none;border-top:1px solid var(--border);margin:40px 0}
+kbd{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:2px 7px;font-size:11px;font-family:'Courier New',monospace}
+a{color:var(--primary)}
+.warn-box{background:rgba(248,81,73,.06);border:2px solid rgba(248,81,73,.4);border-radius:10px;padding:16px;margin:16px 0}
+.warn-box strong{color:var(--red)}
+.tag{display:inline-block;background:var(--bg3);color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:11px;font-family:'Courier New',monospace}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- CAPA -->
+<div class="cover">
+  <div class="cover-icon">⚖️</div>
+  <h1>Manual Completo</h1>
+  <div class="cover-sub">Extrator Jurídico · APK Builder · IA sem servidor<br>Instalação · Rotas de API · Árvore de Arquivos · Compilação APK</div>
+  <div class="cover-author">
+    ⚖️ <strong>Maikon Caldeira</strong> — OAB/MG 183712<br>
+    <small style="color:var(--muted)">Versão 2.0 · 2025 · Standalone · Sem dependências externas</small>
+  </div>
+  <div class="cover-badges">
+    <span class="badge b-green">✓ Sem Servidor</span>
+    <span class="badge b-blue">✓ Offline-First</span>
+    <span class="badge b-purple">✓ IA Direta ao Provedor</span>
+    <span class="badge b-yellow">✓ APK Android</span>
+    <span class="badge b-orange">✓ Electron PC</span>
+  </div>
+</div>
+
+<div class="warn-box">
+  <strong>🚫 PROIBIDO:</strong> Este projeto não usa, não depende e não faz nenhuma chamada a servidores intermediários de terceiros. Toda comunicação de IA vai <strong>diretamente do seu navegador ao servidor do provedor</strong> (OpenAI, Groq, Google etc). Nenhum proxy próprio, nenhum servidor próprio.
+</div>
+
+<!-- ÍNDICE -->
+<div class="toc">
+  <div class="toc-title">📋 Índice Completo</div>
+  <ol style="padding-left:20px;font-size:13px">
+    <li class="toc-item"><a href="#s1">Visão Geral do Projeto</a></li>
+    <li class="toc-item"><a href="#s2">Árvore Completa de Arquivos</a></li>
+    <li class="toc-item"><a href="#s3">Instalação — Todos os Ambientes</a>
+      <div class="toc-sub">
+        <div><a href="#s3a">A. Rodar direto no navegador (sem instalar nada)</a></div>
+        <div><a href="#s3b">B. Gerar APK para Android — via Android Studio</a></div>
+        <div><a href="#s3c">C. Gerar APK para Android — via GitHub Actions (sem instalar nada)</a></div>
+        <div><a href="#s3d">D. Gerar executável para PC — via Electron</a></div>
+        <div><a href="#s3e">E. Hospedar no GitHub Pages (link público grátis)</a></div>
+        <div><a href="#s3f">F. Hospedar no Netlify / Vercel (link público grátis)</a></div>
+      </div>
+    </li>
+    <li class="toc-item"><a href="#s4">Rotas de API Utilizadas</a>
+      <div class="toc-sub">
+        <div><a href="#s4a">Proxies públicos (Site Extrator)</a></div>
+        <div><a href="#s4b">APIs de IA — chamadas diretas</a></div>
+        <div><a href="#s4c">Como obter chaves de IA grátis</a></div>
+      </div>
+    </li>
+    <li class="toc-item"><a href="#s5">Como Usar o Extrator Jurídico</a></li>
+    <li class="toc-item"><a href="#s6">Como Compilar o APK — Passo a Passo</a></li>
+    <li class="toc-item"><a href="#s7">Configuração do Projeto Android</a></li>
+    <li class="toc-item"><a href="#s8">GitHub Actions — Workflow Completo</a></li>
+    <li class="toc-item"><a href="#s9">Configuração da IA — Todos os Provedores</a></li>
+    <li class="toc-item"><a href="#s10">Atalhos e Funcionalidades</a></li>
+    <li class="toc-item"><a href="#s11">Solução de Problemas (FAQ)</a></li>
+    <li class="toc-item"><a href="#s12">Referências Técnicas</a></li>
+  </ol>
+</div>
+
+<hr/>
+
+<!-- S1: VISÃO GERAL -->
+<h2 id="s1">1. Visão Geral do Projeto</h2>
+
+<p>O <strong>Extrator Jurídico</strong> é uma ferramenta standalone — um único arquivo HTML que roda diretamente no navegador, sem servidor, sem instalação, sem dependências externas próprias.</p>
+
+<div class="grid2">
+  <div class="card">
+    <h4>🔍 Extrator de Sites</h4>
+    <p>Acessa qualquer site jurídico via proxies públicos e extrai scripts de cálculo (INSS, previdenciário, trabalhista). Baixa os scripts como .js, HTML completo ou relatório .txt.</p>
+  </div>
+  <div class="card">
+    <h4>🤖 IA Integrada</h4>
+    <p>Assistente "Jasmim" analisa os scripts extraídos. Aceita qualquer provedor de IA via chave direta. Auto-detecção pelo prefixo da chave.</p>
+  </div>
+  <div class="card">
+    <h4>📦 APK Android</h4>
+    <p>O arquivo index.html pode ser embalado como APK via Capacitor + Android Studio, ou compilado na nuvem via GitHub Actions sem instalar nada.</p>
+  </div>
+  <div class="card">
+    <h4>🖥 Executável PC</h4>
+    <p>Pode ser empacotado como aplicativo Desktop (.exe para Windows, .dmg para Mac, .AppImage para Linux) via Electron.</p>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Característica</th><th>Valor</th></tr></thead>
+  <tbody>
+    <tr><td>Tipo de arquivo</td><td>HTML + CSS + JavaScript (tudo em 1 arquivo)</td></tr>
+    <tr><td>Tamanho</td><td>~47 KB (sem compressão) · ~14 KB (ZIP)</td></tr>
+    <tr><td>Servidor próprio necessário</td><td><strong style="color:var(--green)">Não</strong></td></tr>
+    <tr><td>Instalação necessária</td><td><strong style="color:var(--green)">Não</strong> (para usar no navegador)</td></tr>
+    <tr><td>Banco de dados</td><td>Nenhum — chave de IA salva em <code>localStorage</code></td></tr>
+    <tr><td>Dependências npm/yarn</td><td>Nenhuma para rodar · apenas para compilar APK</td></tr>
+    <tr><td>Funciona offline</td><td>Parcialmente (sem IA e sem extração de sites)</td></tr>
+    <tr><td>Package ID Android</td><td><code>br.adv.maikoncaldeira.extrator</code></td></tr>
+    <tr><td>Min Android</td><td>5.1+ (API 22)</td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<!-- S2: ÁRVORE -->
+<h2 id="s2">2. Árvore Completa de Arquivos</h2>
+
+<h3>Pacote de download (o que você recebeu)</h3>
+<div class="tree">
+<span class="d">extrator-juridico-completo/</span><br>
+├── <span class="f">index.html</span>               <span class="c">← O app completo (abre no Chrome)</span><br>
+├── <span class="f">MANUAL-COMPLETO.html</span>      <span class="c">← Este manual</span><br>
+├── <span class="f">LEIA-ME.txt</span>               <span class="c">← Instruções rápidas</span><br>
+├── <span class="f">iniciar.bat</span>               <span class="c">← Abre no Chrome (Windows)</span><br>
+├── <span class="f">iniciar.sh</span>                <span class="c">← Abre no Chrome (Mac/Linux)</span><br>
+│<br>
+├── <span class="d">android/</span>                   <span class="c">← Projeto Android Studio (Capacitor)</span><br>
+│   ├── <span class="f">build.gradle</span>          <span class="c">← Gradle raiz (Kotlin DSL, versão 8.3.2)</span><br>
+│   ├── <span class="f">settings.gradle</span>       <span class="c">← Nome do projeto e módulos</span><br>
+│   ├── <span class="f">gradle.properties</span>     <span class="c">← AndroidX, Jetifier, JVM heap</span><br>
+│   ├── <span class="f">local.properties</span>      <span class="c">← Caminho do Android SDK (edite na sua máquina)</span><br>
+│   ├── <span class="d">gradle/wrapper/</span><br>
+│   │   └── <span class="f">gradle-wrapper.properties</span>  <span class="c">← Gradle 8.6</span><br>
+│   └── <span class="d">app/</span><br>
+│       ├── <span class="f">build.gradle</span>      <span class="c">← Config do app: packageId, SDK, versão</span><br>
+│       ├── <span class="f">proguard-rules.pro</span><span class="c">← Regras ProGuard (Capacitor mantido)</span><br>
+│       └── <span class="d">src/main/</span><br>
+│           ├── <span class="f">AndroidManifest.xml</span>    <span class="c">← Permissões, activity, orientação</span><br>
+│           ├── <span class="d">java/br/adv/maikoncaldeira/extrator/</span><br>
+│           │   └── <span class="f">MainActivity.java</span>  <span class="c">← Entry point (BridgeActivity Capacitor)</span><br>
+│           └── <span class="d">res/values/</span><br>
+│               ├── <span class="f">strings.xml</span>    <span class="c">← Nome do app e custom URL scheme</span><br>
+│               ├── <span class="f">styles.xml</span>     <span class="c">← Tema: cor primária (#6366f1), fundo (#0d1117)</span><br>
+│               └── <span class="f">colors.xml</span>     <span class="c">← Paleta de cores</span><br>
+│<br>
+├── <span class="d">dist/</span>                     <span class="c">← Cópia do index.html (webDir do Capacitor)</span><br>
+│   └── <span class="f">index.html</span><br>
+│<br>
+├── <span class="f">capacitor.config.js</span>        <span class="c">← Configuração do Capacitor</span><br>
+├── <span class="f">package.json</span>               <span class="c">← Dependências: @capacitor/android 6.1.2</span><br>
+│<br>
+├── <span class="d">.github/workflows/</span><br>
+│   └── <span class="f">build-apk.yml</span>          <span class="c">← GitHub Actions: compila APK automático</span><br>
+│<br>
+└── <span class="f">COMPILAR-APK.md</span>            <span class="c">← Guia rápido de compilação</span>
+</div>
+
+<h3>Estrutura interna do index.html</h3>
+<div class="tree">
+<span class="d">index.html</span>  (~47 KB · 1 arquivo · sem dependências externas)<br>
+├── <span class="c">&lt;head&gt;</span><br>
+│   ├── <span class="f">CSS inline</span>             <span class="c">← Tema dark completo, responsivo, mobile-first</span><br>
+│   └── <span class="f">meta tags</span>             <span class="c">← PWA-ready (mobile-web-app-capable)</span><br>
+├── <span class="c">&lt;body&gt;</span><br>
+│   ├── <span class="f">#nav</span>                   <span class="c">← Barra superior com logo e autoria</span><br>
+│   ├── <span class="f">.page</span>                  <span class="c">← Container principal</span><br>
+│   │   ├── <span class="f">.card (busca)</span>       <span class="c">← Input URL + atalhos + loading</span><br>
+│   │   └── <span class="f">#results</span>            <span class="c">← Abas: Scripts, Overview, Assets, Links, APIs</span><br>
+│   ├── <span class="f">#ai-fab</span>               <span class="c">← Botão flutuante 🤖</span><br>
+│   ├── <span class="f">#ai-panel</span>             <span class="c">← Chat com IA (Jasmim)</span><br>
+│   ├── <span class="f">#code-modal</span>           <span class="c">← Visualizador de código em tela cheia</span><br>
+│   └── <span class="f">#key-modal</span>            <span class="c">← Configuração da chave de IA</span><br>
+└── <span class="c">&lt;script&gt;</span><br>
+    ├── <span class="f">UTILS</span>                  <span class="c">← copyText, dlBlob, toast</span><br>
+    ├── <span class="f">IA — AUTO-DETECÇÃO</span>     <span class="c">← detectKeyProvider, callAI (direto ao provedor)</span><br>
+    ├── <span class="f">PROXIES</span>               <span class="c">← fetchViaProxy (3 proxies em cascata)</span><br>
+    ├── <span class="f">EXTRAÇÃO</span>              <span class="c">← doExtract, parseAll, parseMeta, parseAssets…</span><br>
+    ├── <span class="f">RENDER</span>                <span class="c">← renderAll, renderScripts, renderAssets, renderLinks</span><br>
+    └── <span class="f">DOWNLOADS</span>             <span class="c">← dlScripts, dlHtml, dlReport</span>
+</div>
+
+<hr/>
+
+<!-- S3: INSTALAÇÃO -->
+<h2 id="s3">3. Instalação — Todos os Ambientes</h2>
+
+<h3 id="s3a">A. Rodar direto no navegador — sem instalar NADA</h3>
+
+<div class="alert a-ok">Esta é a forma mais simples. Funciona em qualquer computador ou celular com Chrome/Firefox/Edge.</div>
+
+<ol class="step-list">
+  <li><div class="step-body">Extraia o arquivo <code>extrator-juridico-completo.zip</code> em qualquer pasta</div></li>
+  <li><div class="step-body"><strong>Windows:</strong> clique duas vezes em <code>iniciar.bat</code></div></li>
+  <li><div class="step-body"><strong>Mac / Linux:</strong> abra o terminal na pasta e execute <code>./iniciar.sh</code></div></li>
+  <li><div class="step-body"><strong>Qualquer sistema:</strong> arraste o arquivo <code>index.html</code> para o Chrome</div></li>
+  <li><div class="step-body">O app abre. Pronto.</div></li>
+</ol>
+
+<div class="alert a-warn">
+  <strong>Nota CORS no Chrome:</strong> Para funcionar corretamente em arquivo local, use Chrome ou Firefox. O Safari pode bloquear algumas requisições de arquivo local. Se tiver problemas, use: <code>chrome --disable-web-security --user-data-dir=/tmp/chrome</code> (apenas para desenvolvimento)
+</div>
+
+<h3 id="s3b">B. Gerar APK para Android — via Android Studio</h3>
+
+<h4>Pré-requisitos</h4>
+<table>
+  <thead><tr><th>Software</th><th>Versão mínima</th><th>Download</th></tr></thead>
+  <tbody>
+    <tr><td>Node.js</td><td>18.0+</td><td><a href="https://nodejs.org" target="_blank">nodejs.org</a></td></tr>
+    <tr><td>Android Studio</td><td>Hedgehog (2023.1.1)</td><td><a href="https://developer.android.com/studio" target="_blank">developer.android.com/studio</a></td></tr>
+    <tr><td>JDK</td><td>17+ (incluído no Android Studio)</td><td>Instalado com o Android Studio</td></tr>
+    <tr><td>Android SDK</td><td>API 34 (Android 14)</td><td>Via SDK Manager do Android Studio</td></tr>
+    <tr><td>Espaço em disco</td><td>~10 GB</td><td>—</td></tr>
+  </tbody>
+</table>
+
+<h4>Passo a passo</h4>
+<ol class="step-list">
+  <li><div class="step-body">Extraia o ZIP do pacote completo</div></li>
+  <li><div class="step-body">Abra o terminal na pasta extraída e instale as dependências:
+<pre><code>npm install</code></pre>
+  </div></li>
+  <li><div class="step-body">Copie os arquivos web para o projeto Android:
+<pre><code>npx cap copy android</code></pre>
+  </div></li>
+  <li><div class="step-body">Abra o Android Studio → <em>File → Open</em> → selecione a pasta <code>android/</code></div></li>
+  <li><div class="step-body">Aguarde o Gradle sincronizar (~5 minutos na primeira vez). O Android Studio vai baixar dependências automaticamente.</div></li>
+  <li><div class="step-body">No menu: <em>Build → Build Bundle(s)/APK(s) → Build APK(s)</em></div></li>
+  <li><div class="step-body">Quando terminar, clique em <strong>"Locate"</strong> ou encontre o APK em:
+<pre><code>android/app/build/outputs/apk/debug/app-debug.apk</code></pre>
+  </div></li>
+  <li><div class="step-body">Transfira o <code>.apk</code> para o celular e instale</div></li>
+</ol>
+
+<h3 id="s3c">C. Gerar APK — via GitHub Actions (sem instalar NADA)</h3>
+
+<div class="alert a-ok">Esta é a forma mais fácil. Você só precisa de uma conta no GitHub. O APK é compilado na nuvem em ~10 minutos.</div>
+
+<ol class="step-list">
+  <li><div class="step-body">Crie uma conta gratuita em <a href="https://github.com" target="_blank">github.com</a> (se não tiver)</div></li>
+  <li><div class="step-body">Crie um novo repositório: <em>New → Repository name → Create repository</em></div></li>
+  <li><div class="step-body">Extraia o ZIP do pacote completo no seu computador</div></li>
+  <li><div class="step-body">Instale o Git (<a href="https://git-scm.com" target="_blank">git-scm.com</a>) e execute na pasta extraída:
+<pre><code>git init
+git add .
+git commit -m "Extrator Jurídico v2.0"
+git branch -M main
+git remote add origin https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
+git push -u origin main</code></pre>
+  </div></li>
+  <li><div class="step-body">No GitHub, clique na aba <strong>Actions</strong> → você verá o workflow rodando automaticamente</div></li>
+  <li><div class="step-body">Aguarde ~10-15 minutos até terminar (ícone verde ✓)</div></li>
+  <li><div class="step-body">Clique em <strong>Releases</strong> (na barra lateral direita do repositório) → <strong>latest-apk</strong> → baixe o arquivo <code>.apk</code></div></li>
+  <li><div class="step-body">Instale no celular: transfira o .apk → Configurações → Segurança → Fontes desconhecidas ✓ → abra o .apk</div></li>
+</ol>
+
+<div class="alert a-info">
+  <strong>Atualizações automáticas:</strong> Toda vez que fizer <code>git push</code> com alterações, o GitHub Actions compila um novo APK automaticamente. Sem precisar instalar nada.
+</div>
+
+<h3 id="s3d">D. Gerar executável para PC — via Electron</h3>
+
+<h4>Pré-requisitos</h4>
+<ul>
+  <li>Node.js 18+ (<a href="https://nodejs.org" target="_blank">nodejs.org</a>)</li>
+</ul>
+
+<ol class="step-list">
+  <li><div class="step-body">Crie uma pasta <code>extrator-electron/</code> e coloque o <code>index.html</code> dentro de <code>src/</code></div></li>
+  <li><div class="step-body">Crie o arquivo <code>main.js</code>:
+<pre><code>const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 1280, height: 800, minWidth: 900, minHeight: 600,
+    title: 'Extrator Jurídico — OAB/MG 183712',
+    backgroundColor: '#0d1117',
+    webPreferences: { nodeIntegration: false, contextIsolation: true, sandbox: true },
+  });
+  win.loadFile(path.join(__dirname, 'src', 'index.html'));
+}
+app.whenReady().then(() => {
+  createWindow();
+  app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
+});
+app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });</code></pre>
+  </div></li>
+  <li><div class="step-body">Crie o <code>package.json</code>:
+<pre><code>{
+  "name": "extrator-juridico",
+  "version": "2.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "br.adv.maikoncaldeira.extrator",
+    "productName": "Extrator Jurídico",
+    "win": { "target": "nsis" },
+    "mac": { "target": "dmg" },
+    "linux": { "target": "AppImage" }
+  }
+}</code></pre>
+  </div></li>
+  <li><div class="step-body">No terminal, dentro da pasta:
+<pre><code>npm install
+npm start       # Abre o app para testar
+npm run dist    # Gera .exe (Windows) / .dmg (Mac) / .AppImage (Linux)</code></pre>
+  </div></li>
+  <li><div class="step-body">O executável é gerado na pasta <code>dist/</code></div></li>
+</ol>
+
+<h3 id="s3e">E. Hospedar no GitHub Pages (link público grátis)</h3>
+
+<ol class="step-list">
+  <li><div class="step-body">Crie repositório no GitHub com o <code>index.html</code> na raiz</div></li>
+  <li><div class="step-body"><em>Settings → Pages → Branch: main → /root → Save</em></div></li>
+  <li><div class="step-body">Aguarde 2 minutos. Seu link será: <code>https://SEU-USUARIO.github.io/SEU-REPO/</code></div></li>
+  <li><div class="step-body">Qualquer pessoa com o link pode acessar — sem custo, sem servidor</div></li>
+</ol>
+
+<h3 id="s3f">F. Hospedar no Netlify ou Vercel</h3>
+
+<ol class="step-list">
+  <li><div class="step-body">Crie conta em <a href="https://netlify.com" target="_blank">netlify.com</a> ou <a href="https://vercel.com" target="_blank">vercel.com</a></div></li>
+  <li><div class="step-body"><strong>Netlify:</strong> arraste a pasta com o <code>index.html</code> direto no painel. Pronto. Link gerado em segundos.</div></li>
+  <li><div class="step-body"><strong>Vercel:</strong> conecte o repositório GitHub e faça deploy em 1 clique</div></li>
+  <li><div class="step-body">Ambos são gratuitos para uso pessoal</div></li>
+</ol>
+
+<hr/>
+
+<!-- S4: ROTAS DE API -->
+<h2 id="s4">4. Rotas de API Utilizadas</h2>
+
+<h3 id="s4a">Proxies Públicos — Site Extrator</h3>
+
+<div class="alert a-info">Todos os proxies são gratuitos, públicos e sem necessidade de chave ou conta.</div>
+
+<table>
+  <thead><tr><th>#</th><th>Proxy</th><th>URL base</th><th>Formato de chamada</th><th>Resposta</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>1 (primário)</td>
+      <td><strong>AllOrigins</strong></td>
+      <td><code>api.allorigins.win</code></td>
+      <td><code>GET /get?url={URL_CODIFICADA}</code></td>
+      <td>JSON: <code>{ "contents": "html…" }</code></td>
+    </tr>
+    <tr>
+      <td>2 (fallback)</td>
+      <td><strong>CORSProxy.io</strong></td>
+      <td><code>corsproxy.io</code></td>
+      <td><code>GET /?{URL_CODIFICADA}</code></td>
+      <td>HTML direto</td>
+    </tr>
+    <tr>
+      <td>3 (fallback)</td>
+      <td><strong>CodeTabs</strong></td>
+      <td><code>api.codetabs.com</code></td>
+      <td><code>GET /v1/proxy?quest={URL_CODIFICADA}</code></td>
+      <td>HTML direto</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>O sistema tenta automaticamente o Proxy 1. Se falhar (timeout 14s ou erro HTTP), tenta o Proxy 2, depois o Proxy 3. Se todos falharem, exibe erro com sugestão.</p>
+
+<h4>Exemplo real de chamada (AllOrigins)</h4>
+<pre><code>GET https://api.allorigins.win/get?url=https%3A%2F%2Fwww.calculojuridico.com.br
+
+Resposta:
+{
+  "contents": "&lt;!DOCTYPE html&gt;&lt;html&gt;...&lt;/html&gt;",
+  "status": { "url": "https://www.calculojuridico.com.br", "content_type": "text/html", "http_code": 200 }
+}</code></pre>
+
+<h4>Limitações dos proxies públicos</h4>
+<ul>
+  <li>Sites com <strong>Cloudflare Enterprise</strong> ou <strong>Bot Fight Mode</strong> podem bloquear — isso é limitação do site, não do extrator</li>
+  <li>Rate limit: ~60 req/min por IP (AllOrigins). Para uso normal, mais que suficiente.</li>
+  <li>Sites com conteúdo carregado por JavaScript (SPA sem SSR) podem retornar HTML vazio — os scripts estarão nos arquivos .js externos</li>
+</ul>
+
+<h3 id="s4b">APIs de IA — Chamadas Diretas ao Provedor</h3>
+
+<div class="alert a-ok">
+  <strong>Zero proxy próprio.</strong> A chamada vai: <em>Seu navegador → direto → Servidor do provedor (OpenAI, Groq, Google etc)</em>. Nenhum servidor intermediário.
+</div>
+
+<table>
+  <thead><tr><th>Provedor</th><th>Endpoint</th><th>Método</th><th>Autenticação</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>🟢 Groq</td>
+      <td><code>https://api.groq.com/openai/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer gsk_...</code></td>
+    </tr>
+    <tr>
+      <td>🔵 Google Gemini</td>
+      <td><code>https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={AIza...}</code></td>
+      <td>POST</td>
+      <td>Chave na query string</td>
+    </tr>
+    <tr>
+      <td>🟠 Anthropic</td>
+      <td><code>https://api.anthropic.com/v1/messages</code></td>
+      <td>POST</td>
+      <td><code>x-api-key: sk-ant-...</code></td>
+    </tr>
+    <tr>
+      <td>⚫ OpenAI</td>
+      <td><code>https://api.openai.com/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer sk-...</code></td>
+    </tr>
+    <tr>
+      <td>🟣 OpenRouter</td>
+      <td><code>https://openrouter.ai/api/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer sk-or-...</code></td>
+    </tr>
+    <tr>
+      <td>🔴 xAI Grok</td>
+      <td><code>https://api.x.ai/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer xai-...</code></td>
+    </tr>
+    <tr>
+      <td>🟡 Mistral</td>
+      <td><code>https://api.mistral.ai/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer ap-...</code></td>
+    </tr>
+    <tr>
+      <td>🔷 DeepSeek</td>
+      <td><code>https://api.deepseek.com/v1/chat/completions</code></td>
+      <td>POST</td>
+      <td><code>Authorization: Bearer ds-...</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Body padrão (OpenAI-compatible)</h4>
+<pre><code>POST https://api.groq.com/openai/v1/chat/completions
+Content-Type: application/json
+Authorization: Bearer gsk_SEU_TOKEN
+
+{
+  "model": "llama-3.3-70b-versatile",
+  "messages": [
+    { "role": "system", "content": "Você é Jasmim, assistente jurídica..." },
+    { "role": "user", "content": "Analise esse script de cálculo INSS..." }
+  ],
+  "max_tokens": 8192,
+  "temperature": 0.5
+}</code></pre>
+
+<h4>Auto-detecção de provedor pelo prefixo da chave</h4>
+<table>
+  <thead><tr><th>Prefixo</th><th>Provedor detectado</th><th>Modelo padrão</th><th>URL base auto</th></tr></thead>
+  <tbody>
+    <tr><td><code>gsk_</code></td><td>Groq</td><td>llama-3.3-70b-versatile</td><td>api.groq.com/openai/v1</td></tr>
+    <tr><td><code>AIza</code></td><td>Google Gemini</td><td>gemini-2.0-flash</td><td>generativelanguage.googleapis.com</td></tr>
+    <tr><td><code>sk-ant-</code></td><td>Anthropic Claude</td><td>claude-haiku-4-20250514</td><td>api.anthropic.com/v1</td></tr>
+    <tr><td><code>sk-or-</code></td><td>OpenRouter</td><td>anthropic/claude-haiku</td><td>openrouter.ai/api/v1</td></tr>
+    <tr><td><code>sk-</code></td><td>OpenAI</td><td>gpt-4o-mini</td><td>api.openai.com/v1</td></tr>
+    <tr><td><code>xai-</code></td><td>xAI Grok</td><td>grok-3-mini</td><td>api.x.ai/v1</td></tr>
+    <tr><td><code>ap-</code></td><td>Mistral</td><td>mistral-large-latest</td><td>api.mistral.ai/v1</td></tr>
+    <tr><td><code>ds-</code></td><td>DeepSeek</td><td>deepseek-chat</td><td>api.deepseek.com/v1</td></tr>
+    <tr><td>outro (>20 chars)</td><td>Custom OpenAI-compat</td><td>configure</td><td>configure a URL</td></tr>
+  </tbody>
+</table>
+
+<h3 id="s4c">Como obter chaves de IA GRÁTIS</h3>
+
+<div class="grid2">
+  <div class="card">
+    <h4>🟢 Groq — RECOMENDADO (grátis)</h4>
+    <ol>
+      <li>Acesse <a href="https://console.groq.com" target="_blank">console.groq.com</a></li>
+      <li>Clique em <strong>Sign Up</strong> (pode usar Google)</li>
+      <li>No painel: <em>API Keys → Create API Key</em></li>
+      <li>Copie a chave (começa com <code>gsk_</code>)</li>
+      <li>No app, clique em 🔑 → cole → Salvar</li>
+    </ol>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">
+      Limite grátis: 30 req/min · 14.400 req/dia<br>
+      Modelo: Llama 3.3 70B (excelente para análise jurídica)
+    </div>
+  </div>
+  <div class="card">
+    <h4>🔵 Google Gemini — grátis</h4>
+    <ol>
+      <li>Acesse <a href="https://aistudio.google.com" target="_blank">aistudio.google.com</a></li>
+      <li>Faça login com conta Google</li>
+      <li>Clique em <strong>Get API Key → Create API key</strong></li>
+      <li>Copie a chave (começa com <code>AIza</code>)</li>
+      <li>No app, clique em 🔑 → cole → Salvar</li>
+    </ol>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">
+      Limite grátis: 15 req/min · 1.500 req/dia<br>
+      Modelo: Gemini 2.0 Flash (rápido e preciso)
+    </div>
+  </div>
+</div>
+
+<hr/>
+
+<!-- S5: COMO USAR -->
+<h2 id="s5">5. Como Usar o Extrator Jurídico</h2>
+
+<ol class="step-list">
+  <li><div class="step-body">Abra o <code>index.html</code> no Chrome</div></li>
+  <li><div class="step-body">Digite a URL do site jurídico no campo (ex: <code>calculojuridico.com.br</code>) — o <code>https://</code> é adicionado automaticamente</div></li>
+  <li><div class="step-body">Ou clique em um dos atalhos rápidos: Cálculo Jurídico, TJMG, TRT-3 MG, STJ, INSS etc</div></li>
+  <li><div class="step-body">Clique em <strong>🔍 Extrair</strong></div></li>
+  <li><div class="step-body">O sistema tenta os 3 proxies em sequência e exibe o resultado</div></li>
+  <li><div class="step-body">Na aba <strong>⚖️ Scripts</strong>, aparecem os scripts encontrados com badges: ⚖️ Cálculo · 📐 Fórmula · 🌐 AJAX</div></li>
+  <li><div class="step-body">Clique em <strong>👁 Ver tudo</strong> para ver o código completo · <strong>📋</strong> para copiar · <strong>🤖 Analisar</strong> para a IA explicar</div></li>
+  <li><div class="step-body">Baixe com: <strong>⬇ Scripts .js</strong> · <strong>⬇ HTML completo</strong> · <strong>⬇ Relatório .txt</strong></div></li>
+</ol>
+
+<h4>Filtros de script</h4>
+<table>
+  <thead><tr><th>Filtro</th><th>O que mostra</th><th>Palavras detectadas</th></tr></thead>
+  <tbody>
+    <tr><td><span class="badge b-muted">Todos</span></td><td>Todos os scripts inline da página</td><td>—</td></tr>
+    <tr><td><span class="badge b-yellow">⚖️ Cálculo</span></td><td>Scripts com termos jurídicos</td><td>cálculo, salário, benefício, INSS, previdenciário, aposentadoria, pensão, correção, coeficiente, RMC, segurado, contribuição, honorário, rescisão, trabalhista</td></tr>
+    <tr><td><span class="badge b-purple">📐 Fórmula</span></td><td>Scripts com operações matemáticas</td><td>Math., parseFloat, parseInt, .toFixed(), function calc, alíquota, juros, amortização, desconto</td></tr>
+    <tr><td><span class="badge b-green">🌐 AJAX</span></td><td>Scripts com chamadas ao servidor</td><td>fetch(), XMLHttpRequest, $.ajax(), axios., .post(), .get()</td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<!-- S6: COMPILAR APK -->
+<h2 id="s6">6. Como Compilar o APK — Passo a Passo Detalhado</h2>
+
+<h3>Via GitHub Actions (método recomendado)</h3>
+
+<ol class="step-list">
+  <li><div class="step-body">
+    <strong>Instale o Git</strong> no seu computador:<br>
+    Windows: <a href="https://git-scm.com/download/win" target="_blank">git-scm.com/download/win</a><br>
+    Durante a instalação, aceite todas as opções padrão.
+  </div></li>
+  <li><div class="step-body">
+    <strong>Crie conta no GitHub</strong>: <a href="https://github.com/signup" target="_blank">github.com/signup</a><br>
+    É gratuito. Use seu e-mail.
+  </div></li>
+  <li><div class="step-body">
+    Crie um novo repositório em <a href="https://github.com/new" target="_blank">github.com/new</a>:<br>
+    • Nome: <code>extrator-juridico</code><br>
+    • Visibilidade: <strong>Public</strong> (Actions grátis para repositórios públicos)<br>
+    • Clique em <strong>Create repository</strong>
+  </div></li>
+  <li><div class="step-body">
+    Extraia o ZIP do pacote completo. Abra o terminal (ou Prompt de Comando no Windows) na pasta extraída:
+    <pre><code>git init
+git add .
+git commit -m "Extrator Juridico v2.0 - OAB MG 183712"</code></pre>
+  </div></li>
+  <li><div class="step-body">
+    Conecte ao repositório GitHub (substitua SEU-USUARIO):
+    <pre><code>git remote add origin https://github.com/SEU-USUARIO/extrator-juridico.git
+git branch -M main
+git push -u origin main</code></pre>
+    O Git vai pedir seu usuário e senha do GitHub. Na senha, use um <strong>Token de Acesso</strong> (não a senha normal):<br>
+    GitHub → Settings → Developer settings → Personal access tokens → Generate new token → marque <code>repo</code> → Generate
+  </div></li>
+  <li><div class="step-body">
+    No GitHub, clique na aba <strong>Actions</strong>. Você verá o workflow <em>"Build Android APK"</em> rodando. Aguarde ~10-15 minutos.
+  </div></li>
+  <li><div class="step-body">
+    Quando o ícone ficar verde ✓, clique em <strong>Releases</strong> na barra lateral → <strong>latest-apk</strong> → clique no arquivo <code>.apk</code> para baixar.
+  </div></li>
+  <li><div class="step-body">
+    <strong>Instalar no celular Android:</strong><br>
+    1. Envie o .apk pelo WhatsApp, Google Drive, cabo USB ou e-mail<br>
+    2. No celular: Configurações → Segurança (ou Privacidade) → Instalar apps desconhecidos → Permitir<br>
+    3. Abra o arquivo .apk → Instalar<br>
+    4. O app aparece na tela inicial como "Extrator Jurídico"
+  </div></li>
+</ol>
+
+<hr/>
+
+<!-- S7: CONFIG ANDROID -->
+<h2 id="s7">7. Configuração do Projeto Android</h2>
+
+<h3>Dados do app</h3>
+<table>
+  <thead><tr><th>Campo</th><th>Valor</th><th>Arquivo</th></tr></thead>
+  <tbody>
+    <tr><td>Package ID</td><td><code>br.adv.maikoncaldeira.extrator</code></td><td><code>android/app/build.gradle</code>, <code>AndroidManifest.xml</code></td></tr>
+    <tr><td>Nome do app</td><td>Extrator Jurídico</td><td><code>android/app/src/main/res/values/strings.xml</code></td></tr>
+    <tr><td>Versão</td><td>2.0.0 (versionCode: 2)</td><td><code>android/app/build.gradle</code></td></tr>
+    <tr><td>Cor primária</td><td><code>#6366f1</code> (roxo)</td><td><code>res/values/colors.xml</code>, <code>styles.xml</code></td></tr>
+    <tr><td>Cor de fundo</td><td><code>#0d1117</code> (preto)</td><td><code>res/values/colors.xml</code>, <code>styles.xml</code></td></tr>
+    <tr><td>Orientação</td><td><code>unspecified</code> (retrato + paisagem)</td><td><code>AndroidManifest.xml</code></td></tr>
+    <tr><td>Min SDK</td><td>22 (Android 5.1+)</td><td><code>android/app/build.gradle</code></td></tr>
+    <tr><td>Target SDK</td><td>34 (Android 14)</td><td><code>android/app/build.gradle</code></td></tr>
+    <tr><td>Compile SDK</td><td>34</td><td><code>android/app/build.gradle</code></td></tr>
+    <tr><td>Gradle</td><td>8.6</td><td><code>gradle/wrapper/gradle-wrapper.properties</code></td></tr>
+    <tr><td>Android Gradle Plugin</td><td>8.3.2</td><td><code>android/build.gradle</code></td></tr>
+    <tr><td>Kotlin</td><td>1.9.24</td><td><code>android/build.gradle</code></td></tr>
+    <tr><td>Java compatibility</td><td>17</td><td><code>android/app/build.gradle</code></td></tr>
+    <tr><td>Capacitor Android</td><td>6.1.2</td><td><code>package.json</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Permissões do AndroidManifest.xml</h3>
+<table>
+  <thead><tr><th>Permissão</th><th>Por que é necessária</th></tr></thead>
+  <tbody>
+    <tr><td><code>INTERNET</code></td><td>Acessar sites via proxy e APIs de IA</td></tr>
+    <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Verificar conectividade antes de fazer requisições</td></tr>
+    <tr><td><code>READ_EXTERNAL_STORAGE</code> (maxSdk 32)</td><td>Abrir arquivos locais (Android ≤12)</td></tr>
+    <tr><td><code>WRITE_EXTERNAL_STORAGE</code> (maxSdk 28)</td><td>Salvar downloads (Android ≤9)</td></tr>
+    <tr><td><code>VIBRATE</code></td><td>Feedback háptico (Capacitor)</td></tr>
+  </tbody>
+</table>
+
+<h3>Para personalizar o app</h3>
+<table>
+  <thead><tr><th>O que mudar</th><th>Arquivo</th><th>Campo</th></tr></thead>
+  <tbody>
+    <tr><td>Nome do app</td><td><code>android/app/src/main/res/values/strings.xml</code></td><td><code>&lt;string name="app_name"&gt;</code></td></tr>
+    <tr><td>Package ID</td><td><code>android/app/build.gradle</code></td><td><code>applicationId</code> e <code>namespace</code></td></tr>
+    <tr><td>Versão</td><td><code>android/app/build.gradle</code></td><td><code>versionName</code> e <code>versionCode</code></td></tr>
+    <tr><td>Cor primária</td><td><code>android/app/src/main/res/values/colors.xml</code></td><td><code>colorPrimary</code></td></tr>
+    <tr><td>Orientação</td><td><code>android/app/src/main/AndroidManifest.xml</code></td><td><code>android:screenOrientation</code></td></tr>
+    <tr><td>Conteúdo web</td><td><code>dist/index.html</code></td><td>O arquivo HTML completo</td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<!-- S8: GITHUB ACTIONS -->
+<h2 id="s8">8. GitHub Actions — Workflow Completo</h2>
+
+<p>O arquivo <code>.github/workflows/build-apk.yml</code> compila o APK automaticamente sempre que você faz push no branch <code>main</code> ou <code>master</code>.</p>
+
+<h4>O que o workflow faz (passo a passo)</h4>
+<ol>
+  <li>Faz checkout do código (<code>actions/checkout@v4</code>)</li>
+  <li>Instala Java 17 com Temurin distribution</li>
+  <li>Configura Gradle 8.6</li>
+  <li>Instala o Android SDK com <code>android-actions/setup-android@v3</code></li>
+  <li>Instala plataforma Android 34 e build-tools 34.0.0 via <code>sdkmanager</code></li>
+  <li>Instala Node.js 20</li>
+  <li>Instala <code>@capacitor/cli</code>, <code>@capacitor/core</code> e <code>@capacitor/android</code> versão 6.1.2</li>
+  <li>Executa <code>npx cap copy android</code> para copiar o HTML para o projeto Android</li>
+  <li>Executa <code>./gradlew assembleDebug --no-daemon</code> (timeout: 35 min)</li>
+  <li>Localiza o <code>.apk</code> gerado</li>
+  <li>Deleta a release anterior (<code>latest-apk</code>)</li>
+  <li>Publica nova release com o APK como attachment</li>
+</ol>
+
+<h4>Variáveis de ambiente usadas pelo workflow</h4>
+<table>
+  <thead><tr><th>Variável</th><th>Valor</th><th>Descrição</th></tr></thead>
+  <tbody>
+    <tr><td><code>GRADLE_OPTS</code></td><td><code>-Xmx3g -XX:MaxMetaspaceSize=512m</code></td><td>Heap do Gradle (3 GB — necessário para compilar Capacitor)</td></tr>
+    <tr><td><code>JAVA_TOOL_OPTIONS</code></td><td><code>-Xmx3g</code></td><td>Heap do Java compiler</td></tr>
+    <tr><td><code>GH_TOKEN</code></td><td><code>${{ secrets.GITHUB_TOKEN }}</code></td><td>Token automático do GitHub Actions (sem configurar nada)</td></tr>
+  </tbody>
+</table>
+
+<div class="alert a-info">
+  O <code>GITHUB_TOKEN</code> é gerado automaticamente pelo GitHub Actions a cada execução. Você não precisa configurar nenhum secret adicional para compilar o APK.
+</div>
+
+<hr/>
+
+<!-- S9: IA -->
+<h2 id="s9">9. Configuração da IA — Todos os Provedores</h2>
+
+<ol class="step-list">
+  <li><div class="step-body">No app, clique no botão <strong>🤖</strong> (canto inferior direito) para abrir o chat da IA</div></li>
+  <li><div class="step-body">Clique em <strong>🔑</strong> (dentro do painel da IA) para abrir a configuração da chave</div></li>
+  <li><div class="step-body">Cole a chave no campo <strong>"Chave API"</strong>. O provedor é detectado automaticamente pelo prefixo</div></li>
+  <li><div class="step-body">Verifique o texto em verde que confirma qual provedor foi detectado</div></li>
+  <li><div class="step-body">Opcionalmente: informe o modelo (deixe em branco para usar o padrão)</div></li>
+  <li><div class="step-body">Clique em <strong>✅ Salvar</strong>. A chave fica salva no <code>localStorage</code> do navegador</div></li>
+</ol>
+
+<h4>Como testar se a IA está funcionando</h4>
+<ol>
+  <li>No chat, escreva: <code>Olá, responda em português</code></li>
+  <li>Clique em <strong>Enviar</strong> ou pressione <kbd>Ctrl</kbd>+<kbd>Enter</kbd></li>
+  <li>Se retornar uma resposta, está funcionando</li>
+  <li>Se retornar erro 401, a chave está errada ou expirada</li>
+  <li>Se retornar erro 429, excedeu o limite de requisições grátis — aguarde ou troque de provedor</li>
+</ol>
+
+<h4>Usando múltiplos provedores</h4>
+<p>A chave é salva no <code>localStorage</code> com a chave <code>extrator-ai-key</code>. Para trocar de provedor, clique em 🔑 e cole a nova chave. A detecção automática reconhece o novo provedor e ajusta a URL e modelo.</p>
+
+<hr/>
+
+<!-- S10: ATALHOS -->
+<h2 id="s10">10. Atalhos e Funcionalidades</h2>
+
+<table>
+  <thead><tr><th>Ação</th><th>Atalho / Como</th></tr></thead>
+  <tbody>
+    <tr><td>Enviar mensagem para a IA</td><td><kbd>Ctrl</kbd>+<kbd>Enter</kbd> no campo de texto</td></tr>
+    <tr><td>Abrir/fechar painel da IA</td><td>Clique no botão 🤖 (canto inferior direito)</td></tr>
+    <tr><td>Copiar código de um script</td><td>Clique no botão 📋 no card do script</td></tr>
+    <tr><td>Ver código completo</td><td>Clique em 👁 Ver tudo</td></tr>
+    <tr><td>Pedir IA analisar um script</td><td>Clique em 🤖 Analisar no card do script</td></tr>
+    <tr><td>Fechar modal de código</td><td>Clique fora do modal ou no botão ✕</td></tr>
+    <tr><td>Extrair rapidamente um site</td><td>Clique em qualquer atalho na lista de favoritos</td></tr>
+    <tr><td>Filtrar scripts jurídicos</td><td>Clique em ⚖️ Cálculo ou 📐 Fórmula</td></tr>
+    <tr><td>Baixar todos os scripts</td><td>Botão ⬇ Scripts .js</td></tr>
+    <tr><td>Baixar HTML da página</td><td>Botão ⬇ HTML completo</td></tr>
+    <tr><td>Baixar relatório completo</td><td>Botão ⬇ Relatório .txt</td></tr>
+    <tr><td>Enviar scripts para IA analisar</td><td>Botão 📋 + scripts (dentro do chat da IA)</td></tr>
+    <tr><td>Limpar histórico da IA</td><td>Botão 🗑 no cabeçalho do painel da IA</td></tr>
+  </tbody>
+</table>
+
+<h4>Sites com atalho rápido</h4>
+<table>
+  <thead><tr><th>Atalho</th><th>URL</th><th>Tipo</th></tr></thead>
+  <tbody>
+    <tr><td>Cálculo Jurídico</td><td>calculojuridico.com.br</td><td>Cálculos previdenciários, trabalhistas</td></tr>
+    <tr><td>Calculadora Jurídica</td><td>calculadorajuridica.com.br</td><td>Calculadora online</td></tr>
+    <tr><td>Previdenciário.com</td><td>previdenciario.com.br</td><td>INSS, aposentadoria</td></tr>
+    <tr><td>JusBrasil</td><td>jusbrasil.com.br</td><td>Jurisprudência, legislação</td></tr>
+    <tr><td>INSS Digital</td><td>meu.inss.gov.br</td><td>Portal oficial do INSS</td></tr>
+    <tr><td>STJ</td><td>stj.jus.br</td><td>Superior Tribunal de Justiça</td></tr>
+    <tr><td>TCU</td><td>portal.tcu.gov.br</td><td>Tribunal de Contas da União</td></tr>
+    <tr><td>TRT-3 (MG)</td><td>trt3.jus.br</td><td>Tribunal Regional do Trabalho 3ª Região</td></tr>
+    <tr><td>TJMG</td><td>tjmg.jus.br</td><td>Tribunal de Justiça de Minas Gerais</td></tr>
+    <tr><td>TJSP (eSAJ)</td><td>esaj.tjsp.jus.br</td><td>Tribunal de Justiça de São Paulo</td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<!-- S11: FAQ -->
+<h2 id="s11">11. Solução de Problemas</h2>
+
+<h3>O site não carregou / "Todos os proxies falharam"</h3>
+<ul>
+  <li>O site usa Cloudflare com Bot Fight Mode → não é possível contornar via proxy público. Solução: acesse o site normalmente no navegador, salve a página com <kbd>Ctrl</kbd>+<kbd>S</kbd> e analise o HTML salvo.</li>
+  <li>URL errada → certifique que a URL existe e está acessível no navegador</li>
+  <li>Tente sem <code>www</code> (ex: <code>calculojuridico.com.br</code> em vez de <code>www.calculojuridico.com.br</code>)</li>
+  <li>Tente com profundidade 1 (menos requisições)</li>
+</ul>
+
+<h3>Nenhum script jurídico foi encontrado</h3>
+<ul>
+  <li>O site pode ser uma SPA (Single Page App) que carrega o conteúdo via JavaScript — o HTML retornado pelo proxy estará vazio. Os scripts estarão nos <strong>arquivos .js externos</strong> (aba Assets → Scripts JS → clique 👁 para ver)</li>
+  <li>Tente profundidade 2 para buscar subpáginas</li>
+</ul>
+
+<h3>Erro de IA: 401 Unauthorized</h3>
+<ul>
+  <li>Chave de API inválida ou expirada</li>
+  <li>Gere uma nova chave no painel do provedor</li>
+</ul>
+
+<h3>Erro de IA: 429 Too Many Requests</h3>
+<ul>
+  <li>Excedeu o limite grátis (Groq: 30 req/min · Gemini: 15 req/min)</li>
+  <li>Aguarde 1 minuto ou troque para o outro provedor grátis</li>
+</ul>
+
+<h3>O GitHub Actions falhou</h3>
+<ul>
+  <li>Clique no workflow falhado → expanda o passo com ícone ✕ vermelho → leia o erro</li>
+  <li>Erros comuns: <code>SDK not found</code> → o passo de SDK falhou (tente novamente via "Re-run all jobs")</li>
+  <li><code>Gradle sync failed</code> → verifique se os arquivos <code>build.gradle</code> estão no repositório</li>
+</ul>
+
+<h3>APK instalou mas a tela está branca</h3>
+<ul>
+  <li>O <code>index.html</code> não está na pasta <code>dist/</code> do projeto</li>
+  <li>Certifique que executou <code>npx cap copy android</code> antes de compilar</li>
+  <li>No workflow do GitHub Actions, isso é feito automaticamente</li>
+</ul>
+
+<h3>A chave da IA sumiu / preciso reconfigurar</h3>
+<ul>
+  <li>A chave é salva no <code>localStorage</code> do navegador. Se limpou o cache ou abriu em outro navegador, precisa configurar de novo</li>
+  <li>No APK Android, o <code>localStorage</code> persiste entre sessões normalmente</li>
+</ul>
+
+<hr/>
+
+<!-- S12: REFERÊNCIAS -->
+<h2 id="s12">12. Referências Técnicas</h2>
+
+<table>
+  <thead><tr><th>Tecnologia</th><th>Versão</th><th>Documentação</th></tr></thead>
+  <tbody>
+    <tr><td>Capacitor</td><td>6.1.2</td><td><a href="https://capacitorjs.com/docs" target="_blank">capacitorjs.com/docs</a></td></tr>
+    <tr><td>Android Gradle Plugin</td><td>8.3.2</td><td><a href="https://developer.android.com/studio/releases/gradle-plugin" target="_blank">developer.android.com</a></td></tr>
+    <tr><td>Groq API</td><td>—</td><td><a href="https://console.groq.com/docs" target="_blank">console.groq.com/docs</a></td></tr>
+    <tr><td>Google Gemini API</td><td>v1beta</td><td><a href="https://ai.google.dev/docs" target="_blank">ai.google.dev/docs</a></td></tr>
+    <tr><td>Anthropic API</td><td>2023-06-01</td><td><a href="https://docs.anthropic.com" target="_blank">docs.anthropic.com</a></td></tr>
+    <tr><td>OpenAI API</td><td>v1</td><td><a href="https://platform.openai.com/docs" target="_blank">platform.openai.com/docs</a></td></tr>
+    <tr><td>AllOrigins Proxy</td><td>—</td><td><a href="https://allorigins.win" target="_blank">allorigins.win</a></td></tr>
+    <tr><td>CORSProxy.io</td><td>—</td><td><a href="https://corsproxy.io" target="_blank">corsproxy.io</a></td></tr>
+    <tr><td>Electron</td><td>31+</td><td><a href="https://electronjs.org/docs" target="_blank">electronjs.org/docs</a></td></tr>
+    <tr><td>GitHub Actions</td><td>—</td><td><a href="https://docs.github.com/actions" target="_blank">docs.github.com/actions</a></td></tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<div style="text-align:center;padding:28px;color:var(--muted);font-size:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg2)">
+  <div style="font-size:28px;margin-bottom:12px">⚖️</div>
+  <strong style="color:var(--primary);font-size:14px">Extrator Jurídico v2.0</strong><br>
+  <br>
+  Manual produzido para uso profissional<br>
+  <strong>Advogado Maikon Caldeira — OAB/MG 183712</strong><br>
+  <br>
+  <span class="badge b-green">✓ Sem servidor próprio</span>
+  &nbsp;<span class="badge b-blue">✓ Sem dependência Replit</span>
+  &nbsp;<span class="badge b-purple">✓ IA direta ao provedor</span>
+  &nbsp;<span class="badge b-yellow">✓ APK Android via GitHub Actions</span>
+</div>
+
+</div>
+
+<script>
+// Copy buttons para blocos de código
+document.querySelectorAll('pre').forEach(pre => {
+  const btn = document.createElement('button');
+  btn.className = 'copy-btn';
+  btn.textContent = '📋 Copiar';
+  btn.onclick = () => {
+    const code = pre.querySelector('code');
+    navigator.clipboard?.writeText(code?.textContent || pre.textContent).then(() => {
+      btn.textContent = '✓ Copiado!';
+      setTimeout(() => btn.textContent = '📋 Copiar', 2000);
+    });
+  };
+  pre.appendChild(btn);
+});
+</script>
+</body>
+</html>

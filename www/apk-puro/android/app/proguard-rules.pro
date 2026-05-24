@@ -1,0 +1,1 @@
+-keep class br.adv.maikoncaldeira.extrator.** { *; }

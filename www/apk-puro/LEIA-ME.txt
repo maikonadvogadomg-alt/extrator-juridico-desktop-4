@@ -1,0 +1,58 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  ⚖️  EXTRATOR JURÍDICO — APK PURO (sem Capacitor, sem npm)     ║
+║  Maikon Caldeira — OAB/MG 183712                                ║
+╚══════════════════════════════════════════════════════════════════╝
+
+POR QUE ESSE PACOTE?
+  O pacote anterior usava Capacitor (exigia npm install, Node.js,
+  sync do Android Studio) — isso causava erros frequentes.
+  Este pacote usa ANDROID PURO: só Java + WebView.
+  Sem npm. Sem Node. Sem Capacitor. Sem sync.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MÉTODO 1 — GitHub Actions (MAIS FÁCIL, sem instalar nada)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Crie conta em github.com
+  2. Crie repositório público em github.com/new
+  3. Instale o Git em git-scm.com
+  4. Abra terminal AQUI (nesta pasta) e execute:
+
+       git init
+       git add .
+       git commit -m "Extrator Juridico"
+       git remote add origin https://github.com/SEU-USUARIO/SEU-REPO.git
+       git push -u origin main
+
+  5. Clique em Actions no GitHub → aguarda 5-10 min
+  6. Clique em Releases → baixe o .apk
+  7. Instale no celular
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MÉTODO 2 — Android Studio (local)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Abra Android Studio
+  2. File → Open → selecione a pasta  android/  (desta pasta)
+  3. Aguarde sincronizar (só Gradle, sem npm)
+  4. Build → Build APK(s)
+  5. O APK fica em: android/app/build/outputs/apk/debug/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTEÚDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  android/app/src/main/assets/index.html  ← O app (WebView carrega isso)
+  android/app/src/main/java/.../MainActivity.java  ← WebView wrapper
+  android/app/build.gradle               ← Só appcompat, sem Capacitor
+  android/settings.gradle                ← Config nova (AGP 8.3.2)
+  .github/workflows/build-apk.yml        ← GitHub Actions
+
+DEPENDÊNCIAS DO APK:
+  - Gradle 8.6
+  - Android Gradle Plugin 8.3.2
+  - Java 17
+  - androidx.appcompat:appcompat:1.7.0
+  SEM npm, SEM Node.js, SEM Capacitor, SEM Replit
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

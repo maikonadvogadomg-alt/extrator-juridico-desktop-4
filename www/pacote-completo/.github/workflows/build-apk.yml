@@ -1,0 +1,88 @@
+name: Build APK — Extrator Jurídico
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Gradle 8.6
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.6'
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar plataforma Android 34
+        run: |
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          sdkmanager --install "platforms;android-34" "build-tools;34.0.0" "platform-tools"
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+
+      - name: Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Capacitor
+        run: npm install --no-save @capacitor/cli@6.1.2 @capacitor/core@6.1.2 @capacitor/android@6.1.2
+
+      - name: Copiar web para Android
+        run: npx cap copy android --inline
+
+      - name: Permissão gradlew
+        working-directory: android
+        run: chmod +x gradlew
+
+      - name: Build APK
+        working-directory: android
+        timeout-minutes: 35
+        env:
+          GRADLE_OPTS: "-Xmx3g -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8 -Dorg.gradle.daemon=false"
+          JAVA_TOOL_OPTIONS: "-Xmx3g"
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+        run: ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tail -200
+
+      - name: Encontrar APK
+        id: apk
+        run: |
+          APK=$(find android -name "*.apk" | head -1)
+          cp "$APK" "extrator-juridico-v2.apk"
+          echo "APK: $APK"
+
+      - name: Deletar release anterior
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release delete latest-apk --yes 2>/dev/null || true
+          git push origin --delete latest-apk 2>/dev/null || true
+
+      - name: Publicar Release com APK
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create latest-apk \
+            --title "✅ Extrator Jurídico v2.0 — APK" \
+            --notes "**Extrator Jurídico — Maikon Caldeira OAB/MG 183712**
+
+          Clique no arquivo .apk abaixo para baixar.
+
+          **Instalar no celular:**
+          1. Transfira o .apk para o Android
+          2. Configurações → Segurança → Fontes desconhecidas ✓
+          3. Abra o .apk → Instalar" \
+            --latest \
+            "extrator-juridico-v2.apk"
